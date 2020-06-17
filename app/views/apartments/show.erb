@@ -1,0 +1,28 @@
+<h1>Apartment Information</h1>
+
+<label>Address:</label>
+<h2><%= @apartment.address %></h2>
+
+<label>Tenants:</label>
+<br/>
+
+<ul>
+<% @apartment.tenants.each do |t| %>
+    <a href='/tenants/<%= t.id %>'>
+    <li> <%= t.name%> </li>
+    </a>
+<% end %>
+</ul>
+
+<br/>
+<a href="/apartments/<%= @apartment.id %>/edit"> Edit Apartment Information </a>
+
+<br/>
+<a href = "/apartments"> Back to apartment List </a>
+
+<form method="post" action="/apartments/<%= @apartment.id%>">
+<input type="hidden" name="_method" value="delete"/>
+
+<input type='submit' value="Delete Apartment"/>
+
+</form>

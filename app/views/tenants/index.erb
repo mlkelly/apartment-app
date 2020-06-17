@@ -1,0 +1,17 @@
+<h1>Tenant List</h1>
+
+<ul>
+
+<% @tenants. each do |t| %>
+    <a href="/tenants/<%= t.id %>">
+        <li> <%= t.name %></li>
+    </a>
+<% end %>
+
+<ul>
+
+<br/>
+<a class="button" href="/apartments">See apartment list</a>
+<br/>
+<a class="button" href="/tenants/new">create new tenant</a>
+

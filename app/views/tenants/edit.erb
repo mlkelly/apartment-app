@@ -1,1 +1,13 @@
 
+<h1>Edit tenant:</h1>
+<form action='/tenants/<%= @tenant.id %>' method='POST'>
+    <input type='hidden' name='_method' value='patch'/>
+    <label>Name:</label><input type='text' name='name' value='<%= @tenant.name %>'/>
+    <select name='apartment'>
+        <option disabled selected>Choose an apartment</option>
+        <% @apartments.each do |apartment| %>
+        <option value='<%= apartment.id %>'><%= apartment.address %></option>
+        <% end %>
+    </select>
+    <input type='submit' value='Save Changes'>
+</form>

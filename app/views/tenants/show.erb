@@ -1,0 +1,14 @@
+<h1>Tenant Information</h1>
+
+<label>Name:</label>
+<h2><%= @tenant.name %></h2>
+
+<label>Address:</label>
+<br/>
+<a href='/apartments/<%= @tenant.apartment.id%>'><%= @tenant.apartment.address %></a>
+
+<br/>
+<a href="/tenants/<%= @tenant.id %>/edit"> Edit Tenant Information </a>
+
+<br/>
+<a href = "/tenants"> Back to Tenant List </a>
